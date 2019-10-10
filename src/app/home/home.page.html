@@ -1,14 +1,24 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+     GALERIA
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+    <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide class="slide1" *ngFor="let g of gallery">
+        <ion-card>
+            <ion-img [src]="g.img"></ion-img>
+            <ion-card-header>
+              <ion-card-subtitle>{{g.subtitle}}</ion-card-subtitle>
+              <ion-card-title >{{g.title}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>{{g.content}}</ion-card-content>
+          </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  
 </ion-content>
